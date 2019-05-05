@@ -1,0 +1,71 @@
+.card {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+    width:49%;   
+}
+
+.poster {
+    width: 185px;
+    height: 278px;
+}
+
+.title {
+    width: 100%;
+    display: block;
+    font-weight: 600;
+    font-size: 1.1em;
+    line-height: 1.1em;
+    color:#000
+}
+
+.realeasedate {
+    color: rgba(0,0,0,0.6);
+    line-height: 1em;
+    width: 100%;
+}
+
+ .overview {
+    word-wrap: break-word;
+    white-space: normal;
+    color: #4d4d4d;
+    font-size: 0.9em;
+    line-height: 1.2em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+    max-height: 7em;
+    margin-right: -1em;
+    padding-right: 1em;
+
+    &:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        background: white;
+    }
+}
+
+
+.view-more {
+    border-top: 1px solid #e3e3e3;
+    padding: 16px;
+    text-overflow: ellipsis;
+    a {
+        font-size: 0.9em;
+        font-weight: 400;
+        color: #000;
+    }
+}
+
+a:hover {
+    text-decoration: none
+}

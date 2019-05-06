@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Movie } from '../models/movie.model';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-item',
@@ -9,15 +8,17 @@ import { Movie } from '../models/movie.model';
   styleUrls: ['./movie-item.component.scss']
 })
 export class MovieItemComponent implements OnInit {
-
-  movies: Movie[];
+  movielist: any[];
   
-  constructor ( private dataService: DataService ) {}
+  constructor ( private dataService: DataService, private router: Router ) {}
   
   ngOnInit () {
     return this.dataService.getMovies()
-    .subscribe(data => this.movies = data);
+    .subscribe(data => this.movielist = data);
   }
 
+  goToMovie(id) {
+    this.router.navigate([`/movie-detail/${id}`]);  
+  }
 
 }

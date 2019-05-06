@@ -1,22 +1,22 @@
-<div class="header large border first">
+<div class="header large border first" >
   <div class="custom_bg">
     <div class="single_column">
       <section class="images inner">
           
         <div class="poster">
-          <div class="image_content">
-              <img src="https://image.tmdb.org/t/p/w500">
+          <div class="image_content" >
+              <img src="https://image.tmdb.org/t/p/w500/{{movies.poster_path}}">
           </div>
         </div>
   
         <div class="header_poster_wrapper">
           <section class="header poster">
-            <div class="title" >
+            <div class="title">
               <span>
                 <a href="/movie/299536-avengers-infinity-war">
-                  <h2 class="22">{{ movie.title }}</h2>
+                  <h2 class="22">{{ movies.title }}</h2>
                 </a> 
-                <span class="release_date">{{ movie.release_date | date:'yyyy' }}</span>
+                <span class="release_date">{{ movies.release_date | date:'yyyy' }}</span>
               </span>
             </div>
 
@@ -47,7 +47,7 @@
               <h3 dir="auto">Overview</h3>
               <div class="overview" dir="auto">
                 
-                  <p>As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.</p>
+                  <p>{{ movies.overview }}</p>
                 
               </div>
   

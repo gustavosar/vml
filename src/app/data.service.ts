@@ -9,6 +9,7 @@ import { Movie } from './models/movie.model';
 
 export class DataService {
   apiUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=777abf45847b76e7a1025f699bc71b0e&language=en-US&page=1'
+  apiUrlById = 'https://api.themoviedb.org/3/movie/{{id}}?api_key=777abf45847b76e7a1025f699bc71b0e'
 
   constructor ( private _http: HttpClient ) {}
 
@@ -16,9 +17,14 @@ export class DataService {
       return this._http.get<Movie[]>(this.apiUrl);
   }
 
-  getMovieById (id: number) {
-    return this._http.get<Movie>(this.apiUrl + '/' + id);
+  getMovieById (id) {
+    return this._http.get<Movie[]>(this.apiUrlById.replace('{{id}}', id));
   } 
-
+  getMovieCredit(id) {
+    return this._http.get<Movie[]>(this.apiUrlById.replace('{{id}}' + '/credit', id));
+  } 
+  getMovieReview (id) {
+    return this._http.get<Movie[]>(this.apiUrlById.replace('{{id}}' + '/review', id));
+  } 
 
 }

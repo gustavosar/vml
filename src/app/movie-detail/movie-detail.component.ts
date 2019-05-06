@@ -1,6 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { DataService } from '../data.service';
 import { Movie } from '../models/movie.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movie-detail',
@@ -12,17 +13,17 @@ import { Movie } from '../models/movie.model';
 export class MovieDetailComponent implements OnInit {
 
   movies: Movie[];
-  Movie: any = {};
+  id: string;
 
-  constructor ( private dataService: DataService ) {
-
+  constructor (private dataService: DataService, private route: ActivatedRoute,) {
+    route.params.subscribe(() => {
+      this.id = this.route.snapshot.paramMap.get('id');
+    });
   }
   
   ngOnInit () {
-    return this.dataService.getMovies()
-    .subscribe((data: {}) => { this.movies = data });
-
+    return this.dataService.getMovieById(this.id)
+    .subscribe(data => this.movies = data);
   }
-
 
 }

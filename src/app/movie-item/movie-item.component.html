@@ -1,19 +1,18 @@
 <div class="container d-flex justify-content-between flex-wrap mb-4 mt-4 pl-0 pr-0" >
-    <div class="card m-0 p-0 mb-4 d-flex justify-content-between align-items-stretch align-content-between flex-row flex-nowrap" *ngFor="let movie of movies?.results">
+    <div class="card m-0 p-0 mb-4 d-flex justify-content-between align-items-stretch align-content-between flex-row flex-nowrap" *ngFor="let movie of movielist?.results">
 
-        <a class="result" [routerLink]='["movie-detail"]'>
+        <a class="result pointer" (click)="goToMovie(movie.id)">
             <img class="poster" src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}">
         </a>
         <div class="d-flex flex-sm-column justify-content-between">
             <div class="ml-3 mr-4 mt-3 d-flex flex-sm-column">
-                <a class="title" href="#">{{ movie.title }}</a>
+                <a class="title pointer" (click)="goToMovie(movie.id)">{{ movie.original_title }}</a>
                 <span class="realeasedate mt-1">{{ movie.release_date | date }}</span>        
                 <p class="overview mt-4">{{ movie.overview }}</p>
             </div>
-            <p class="view-more m-0"><a href="#">More Info</a></p>
+            <p class="view-more m-0 pointer"><a (click)="goToMovie(movie.id)">More Info</a></p>
         </div>
         
-
     </div>
 
   </div>

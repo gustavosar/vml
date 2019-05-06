@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Move } from '../models/move.model';
+import { Movie } from '../models/movie.model';
+
 
 @Component({
   selector: 'app-movie-item',
@@ -9,13 +10,14 @@ import { Move } from '../models/move.model';
 })
 export class MovieItemComponent implements OnInit {
 
-  moves: Move[];
-
+  movies: Movie[];
+  
   constructor ( private dataService: DataService ) {}
   
   ngOnInit () {
-    return this.dataService.getMoves()
-    .subscribe(data => this.moves = data);
+    return this.dataService.getMovies()
+    .subscribe(data => this.movies = data);
   }
+
 
 }

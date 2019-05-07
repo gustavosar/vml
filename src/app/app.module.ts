@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { CrewComponent } from './crew/crew.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
     MovieItemComponent,
     HeaderComponent,
     FooterComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    CrewComponent
   ],
   imports: [
     BrowserModule,

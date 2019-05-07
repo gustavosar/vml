@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Movie } from './models/movie.model';
+import { Crew } from './models/crew.model';
 
 
 @Injectable({
@@ -21,7 +22,7 @@ export class DataService {
     return this._http.get<Movie[]>(this.apiUrlById.replace('{{id}}', id));
   } 
   getMovieCredit(id) {
-    return this._http.get<Movie[]>(this.apiUrlById.replace('{{id}}' + '/credit', id));
+    return this._http.get<Crew[]>(this.apiUrlById.replace('{{id}}', id + "/credits" ) );
   } 
   getMovieReview (id) {
     return this._http.get<Movie[]>(this.apiUrlById.replace('{{id}}' + '/review', id));

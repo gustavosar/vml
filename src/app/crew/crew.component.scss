@@ -1,0 +1,54 @@
+div.header.large.first ol.people li {
+    background-color: transparent;
+    height: auto;
+    margin-bottom: 0;
+}
+
+ol.people.no_image li {
+    width: 33%;
+    flex-basis: 33%;
+    text-align: left;
+    margin-bottom: 14px;
+    margin-right: 0;
+    box-sizing: border-box;
+    padding-right: 20px;
+}
+
+div.header.large.first ol.people li {
+    background-color: transparent;
+    height: auto;
+    margin-bottom: 0;
+}
+
+ol.people.no_image li {
+    width: 33%;
+    flex-basis: 33%;
+    text-align: left;
+    margin-bottom: 14px;
+    margin-right: 0;
+    box-sizing: border-box;
+    padding-right: 20px;
+    color:#000
+}
+
+li p {
+    padding: 0;
+    margin:0;
+    font-weight:700
+}
+
+.character {
+    font-size: 0.85em;
+    font-weight:500 !important
+}
+
+.profile {
+    width: 33%;
+    flex-basis: 33%;
+    text-align: left;
+    margin-bottom: 14px;
+    margin-right: 0;
+    box-sizing: border-box;
+    padding-right: 20px;
+    float:left
+}

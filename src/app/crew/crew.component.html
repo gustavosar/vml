@@ -1,0 +1,4 @@
+<li class="profile mt-2" *ngFor="let crew of crews?.crew | slice:0:6; let i=index">
+  <p>{{crew.name}}</p>
+  <p class="character">{{crew.job}}</p>
+</li>

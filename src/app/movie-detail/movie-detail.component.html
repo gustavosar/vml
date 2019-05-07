@@ -1,4 +1,4 @@
-<div class="header large border first" >
+<div class="header large first" >
   <div class="custom_bg">
     <div class="single_column">
       <section class="images inner">
@@ -11,69 +11,26 @@
   
         <div class="header_poster_wrapper">
           <section class="header-poster">
+
             <div class="title">
               <span>
                 <h2>{{ movies.title }}</h2>
                 <span class="release_date">({{ movies.release_date | date:'yyyy' }})</span>
               </span>
             </div>
-
-            <ul class="actions">
-
-              <li class="tooltip use_tooltip list tooltip_hover" title="Add to list" data-role="tooltip">
-                <a href="#"><span class="glyphicons glyphicons-list x1"></span></a>
-              </li>
-    
-              <li class="tooltip use_tooltip" title="Mark as Favorite" data-role="tooltip">
-                  <span class="glyphicons glyphicons-heart x1"></span>
-              </li>
-    
-              <li class="tooltip use_tooltip" title="Add to your watchlist" data-role="tooltip">
-               <span class="glyphicons glyphicons-bookmark x1"></span>
-              </li>
-          
-              <li class="tooltip use_tooltip rating tooltip_hover" title="Rate It!" data-role="tooltip">
-                <span class="glyphicons glyphicons-star x1"></span>
-              </li>
-      
-              <li class="video none">
-                <span class="glyphicons glyphicons-play"></span> Play Trailer
-              </li>
-            </ul>
   
-            <div class="header_info">
-              <h3 dir="auto">Overview</h3>
-              <div class="overview" dir="auto">
-                
-                  <p>{{ movies.overview }}</p>
-                
+            <div class="header_info mt-4">
+              <h3>Overview</h3>
+              <div class="overview">
+                <p>{{ movies.overview }}</p>
               </div>
   
-              <h3 class="featured" dir="auto">Featured Crew</h3>
+              <h3 class="featured">Featured Crew</h3>
               <ol class="people no_image">
-                  
-                <li class="profile">
-                  <p><a href="/person/19272-joe-russo">Joe Russo</a></p>
-                  <p class="character">Director</p>
-                </li>
-              
-                <li class="profile">
-                  <p><a href="/person/19271-anthony-russo">Anthony Russo</a></p>
-                  <p class="character">Director</p>
-                </li>
-              
-                <li class="profile">
-                  <p><a href="/person/5552-stephen-mcfeely">Stephen McFeely</a></p>
-                  <p class="character">Screenplay</p>
-                </li>
-              
-                <li class="profile">
-                  <p><a href="/person/5551-christopher-markus">Christopher Markus</a></p>
-                  <p class="character">Screenplay</p>
-                </li>
-                  
+                <app-crew></app-crew>
               </ol>
             </div>
+
           </section>
         </div>
   

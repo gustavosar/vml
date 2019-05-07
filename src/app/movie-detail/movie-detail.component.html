@@ -5,41 +5,39 @@
           
         <div class="poster">
           <div class="image_content" >
-              <img src="https://image.tmdb.org/t/p/w500/{{movies.poster_path}}">
+              <img class="poster-img" src="https://image.tmdb.org/t/p/w500/{{movies.poster_path}}">
           </div>
         </div>
   
         <div class="header_poster_wrapper">
-          <section class="header poster">
+          <section class="header-poster">
             <div class="title">
               <span>
-                <a href="/movie/299536-avengers-infinity-war">
-                  <h2 class="22">{{ movies.title }}</h2>
-                </a> 
-                <span class="release_date">{{ movies.release_date | date:'yyyy' }}</span>
+                <h2>{{ movies.title }}</h2>
+                <span class="release_date">({{ movies.release_date | date:'yyyy' }})</span>
               </span>
             </div>
 
-            <ul class="auto actions">
+            <ul class="actions">
 
               <li class="tooltip use_tooltip list tooltip_hover" title="Add to list" data-role="tooltip">
-                <a class="no_click" href="#"><span class="glyphicons glyphicons-list x1"></span></a>
+                <a href="#"><span class="glyphicons glyphicons-list x1"></span></a>
               </li>
     
               <li class="tooltip use_tooltip" title="Mark as Favorite" data-role="tooltip">
-                <a id="favourite" class="no_click add_to_account_list favourite false" href="#"><span class="glyphicons glyphicons-heart x1"></span></a>
+                  <span class="glyphicons glyphicons-heart x1"></span>
               </li>
     
               <li class="tooltip use_tooltip" title="Add to your watchlist" data-role="tooltip">
-                <a id="watchlist" class="no_click add_to_account_list watchlist false" href="#"><span class="glyphicons glyphicons-bookmark x1"></span></a>
+               <span class="glyphicons glyphicons-bookmark x1"></span>
               </li>
           
               <li class="tooltip use_tooltip rating tooltip_hover" title="Rate It!" data-role="tooltip">
-                <a id="rate_it" class="no_click rating false" href="#"><span class="glyphicons glyphicons-star x1"></span></a>
+                <span class="glyphicons glyphicons-star x1"></span>
               </li>
       
               <li class="video none">
-                <a class="no_click play_trailer" href="#" data-site="YouTube" data-id="6ZfuNTqbHE8" data-title="Play Trailer"><span class="glyphicons glyphicons-play"></span> Play Trailer</a>
+                <span class="glyphicons glyphicons-play"></span> Play Trailer
               </li>
             </ul>
   

@@ -9,13 +9,13 @@ import { Crew } from './models/crew.model';
 })
 
 export class DataService {
-  apiUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=777abf45847b76e7a1025f699bc71b0e&language=en-US&page=1'
+  apiUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=777abf45847b76e7a1025f699bc71b0e&language=en-US&page={{page}}'
   apiUrlById = 'https://api.themoviedb.org/3/movie/{{id}}?api_key=777abf45847b76e7a1025f699bc71b0e'
 
   constructor ( private _http: HttpClient ) {}
 
-  getMovies () {
-      return this._http.get<Movie[]>(this.apiUrl);
+  getMovies (page) {
+    return this._http.get<any>(this.apiUrl.replace('{{page}}',page));
   }
 
   getMovieById (id) {

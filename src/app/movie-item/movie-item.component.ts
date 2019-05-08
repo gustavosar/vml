@@ -9,13 +9,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./movie-item.component.scss']
 })
 export class MovieItemComponent implements OnInit {
-  movielist: any[];
+  p: number = 1;
+  movielist: any;
+  totalMovies: number = 0;
   
   constructor ( private dataService: DataService, private router: Router ) {}
   
   ngOnInit () {
-    return this.dataService.getMovies()
-    .subscribe(data => this.movielist = data);
+    console.log(this.p);
+    this.carregaListaFilmes(this.p);
+  }
+
+  pageChanged(page)
+  {
+    this.carregaListaFilmes(page);
+  }
+
+  carregaListaFilmes(page)
+  {
+    this.p = page;
+    this.dataService.getMovies(this.p)
+    .subscribe(data => {
+      console.log(data);
+      this.totalMovies = data.total_results;
+      this.movielist = data.results;
+    });
   }
 
   goToMovie(id) {

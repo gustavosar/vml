@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { CrewComponent } from './crew/crew.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CrewComponent } from './crew/crew.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

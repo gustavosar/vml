@@ -25,7 +25,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-image: url(https://image.tmdb.org/t/p/w1400_and_h450_face/{{backdrop_path}});
     will-change: opacity;
     transition: filter 1s;
 }

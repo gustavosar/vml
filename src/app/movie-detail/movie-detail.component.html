@@ -5,7 +5,7 @@
           
         <div class="poster">
           <div class="image_content" >
-              <img class="poster-img" src="https://image.tmdb.org/t/p/w500/{{movies.poster_path}}">
+              <img class="poster-img" src="https://image.tmdb.org/t/p/w500/{{movies?.poster_path}}">
           </div>
         </div>
   
@@ -14,15 +14,15 @@
 
             <div class="title">
               <span>
-                <h2>{{ movies.title }}</h2>
-                <span class="release_date">({{ movies.release_date | date:'yyyy' }})</span>
+                <h2>{{ movies?.title }}</h2>
+                <span class="release_date">({{ movies?.release_date | date:'yyyy' }})</span>
               </span>
             </div>
   
             <div class="header_info mt-4">
               <h3>Overview</h3>
               <div class="overview">
-                <p>{{ movies.overview }}</p>
+                <p>{{ movies?.overview }}</p>
               </div>
   
               <h3 class="featured">Featured Crew</h3>
